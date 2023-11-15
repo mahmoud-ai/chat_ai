@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decision Management System</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f0f0f0;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+      }
+	  select {
+        appearance: none; /* Remove default dropdown arrow */
+        background-image: url("dropdown-arrow.png"); /* Add your own dropdown arrow image */
+        background-repeat: no-repeat;
+        background-position: right center;
+        padding-right: 30px; /* Adjust based on the width of your arrow image */
+      }
+      label.checkbox-label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Move label to the left */
+      }
+      input[type="checkbox"] {
+        margin-right: 1300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Decision Management System</h1>
+
+    <form action="/run-model">
+      <label for="crisisName">Crisis Name:</label>
+      <input
+        type="text"
+        id="crisisName"
+        name="crisisName"
+        placeholder="Enter crisis name"
+      />
+	  
+      <label for="sector">Choose Sector:</label>
+      <select id="sector" name="sector">
+        <option value="health">Health</option>
+        <option value="national Security">National Security</option>
+        <option value="economic">Economic</option>
+        <option value="education">Education</option>
+        <option value="politics">Politics</option>
+        <option value="media">Media</option>
+        <!-- Add more sectors as needed -->
+      </select>
+
+      <label class="checkbox-label">
+        Any Injuries?
+        <input type="checkbox" id="injuries" name="injuries" />
+      </label>
+      <label for="model">Choose model:</label>
+      <select id="model" name="model">
+        <option value="jais">Jais</option>
+        <option value="llama">Lama</option>
+        <!-- Add more sectors as needed -->
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+    <h2>{{ output }}</h2>
+    <!-- You can add more form fields as needed -->
+  </body>
+</html>

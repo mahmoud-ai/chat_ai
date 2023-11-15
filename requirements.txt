@@ -1,0 +1,16 @@
+torch
+fairscale
+fire
+sentencepiece
+flask
+flask_ngrok
+deep_translator
+langdetect
+sentencepiece
+transformers
+accelerate
+langdetect
+pre-commit
+librosa
+fairseq2==0.1.*
+requests
